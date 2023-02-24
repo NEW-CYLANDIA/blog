@@ -89,6 +89,15 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addFilter("getMemberInfo", (members, label) => {
+		let member = members.filter(a => a.key === label)[0];
+		return member;
+	});
+
+	eleventyConfig.addFilter("getPostsByMember", (posts, member) => {
+		return posts.filter(a => a.data.author === member);
+	});
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line

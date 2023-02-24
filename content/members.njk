@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+<h1>Member Directory</h1>
+<ol>
+    {%- for member in members %}
+        <ul><a href="/members/{{member.key}}/">{{ member.name }}</a></ul>
+    {% endfor -%}
+</ol>

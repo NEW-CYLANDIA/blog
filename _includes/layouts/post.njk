@@ -7,6 +7,12 @@ layout: layouts/base.njk
 {% include "public/css/prism-diff.css" %}
 {%- endcss %}
 <h1>{{ title }}</h1>
+{% if author %}
+	{% set memberMeta = (members | getMemberInfo(author)) %}
+	<p>
+		by <a href="/members/{{ author }}">{{ memberMeta.name }}</a>
+	</p>
+{% endif %}
 
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>

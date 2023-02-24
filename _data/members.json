@@ -1,0 +1,18 @@
+[
+    {
+        "key": "ikestrel",
+        "name": "izzy kestrel",
+        "bio": "gamedev and trans hottie",
+        "website": "https://iznaut.com",
+        "photo": "/img/ikestrel.png",
+        "twitter": "iznaut"
+    },
+    {
+        "key": "elazerwalker",
+        "name": "Emilia Lazer-Walker",
+        "bio": "gex's #2 fan",
+        "website": "https://lazerwalker.com",
+        "photo": "/img/elazerwalker.png",
+        "twitter": "lazerwalker"
+    }
+]
