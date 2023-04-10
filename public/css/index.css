@@ -268,3 +268,9 @@ a[href].header-anchor:focus,
 h2 + .header-anchor {
 	font-size: 1.5em;
 }
+
+img {
+	width: 80%;
+	height: 80%;
+	align-content: center;
+}
