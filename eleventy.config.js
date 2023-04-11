@@ -98,6 +98,15 @@ module.exports = function(eleventyConfig) {
 		return posts.filter(a => a.data.author === member);
 	});
 
+	// Convert relative Markdown file links to relative post links
+	const customMarkdownIt = require("markdown-it")({
+		html: true,
+		replaceLink: link => link.replace(/^([^/][^:]*)\.md(#[^#]+)?$/, "../$1/$2"),
+	})
+		.use(require("markdown-it-replace-link"));
+
+	eleventyConfig.setLibrary("md", customMarkdownIt);
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line

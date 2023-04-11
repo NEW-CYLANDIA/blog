@@ -2,6 +2,7 @@
 title: izzy's documentation manifesto
 description: a short(ish) post for izzy to justify typing almost exclusively in Lowercase
 author: ikestrel
+date: git Last Modified
 tags:
   - manifesto
 ---
