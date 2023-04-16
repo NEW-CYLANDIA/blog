@@ -7,6 +7,8 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
+const pluginTOC = require('eleventy-plugin-toc')
+
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -106,6 +108,12 @@ module.exports = function(eleventyConfig) {
 		.use(require("markdown-it-replace-link"));
 
 	eleventyConfig.setLibrary("md", customMarkdownIt);
+
+	eleventyConfig.addPlugin(pluginTOC, {
+		tags: ['h1', 'h2'],
+		wrapper: 'div',
+		'ul': true
+	})
 
 	// Features to make your build faster (when you need them)
 

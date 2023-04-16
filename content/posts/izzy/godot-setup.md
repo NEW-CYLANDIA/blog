@@ -15,13 +15,11 @@ hi! what follows is a straightforward guide to help you get past all the annoyin
 
 (btw - if you haven't read [my thoughts on tutorial writing](docs-manifesto.md), i might recommend that first just so you know what you're getting into. or not. i'm not your boss 😉)
 
-# Getting started with Godot Engine
+# Step 1: Downloading Godot Engine
 
 Godot Engine is a free, cross-platform, and open-source game engine that allows you to create 2D and 3D games with relative ease. i like it a lot! if you have any familiarity with Unity or Unreal you should feel somewhat at home here (after a bit of reorientation), but even if you're coming in with no prior gamedev experience, i think the learning curve is pretty managable.
 
 anyway, the purpose of this guide is not to teach you how to use the engine, but just get past the boring part of getting it on your machine and Ready To Create. so let's get into it.
-
-## Step 1: Downloading Godot
 
 {% image "./godotsetup-download.png", "this is a screenshot and not real buttons, please do not click" %}
 
@@ -124,6 +122,8 @@ i've had my fair share of weird config issues having set this up multiple times 
 
 # Step 3: Automatic itch.io Builds with GitHub Actions
 
+{% image "./godotsetup-githubaction.png", "dedicate just a little work up front and you'll get to see this nice green checkmark every time you change your code. unless something breaks. which it probably won't. probably" %}
+
 alright! here's the cool part! at least, i think it's pretty cool.
 
 you may well be familiar with the lovely indie game marketplace [itch.io](https://itch.io/) already. you may even have an account already! woah, you have a game uploaded too?? sick, i can skip over all explaining all that stuff then.
@@ -133,4 +133,21 @@ if you've already shipped a game on itch, you've likely had to update said game 
 with pushing changes up to GitHub already an important part of our workflow, we can take advantage of another neat tool that comes along with it: GitHub Actions!
 
 [GitHub Actions](https://github.com/features/actions) are workflows triggered _automatically_ when certain events occur on a GitHub repository, such as pushing code changes. thanks to this framework and the hard work of individual contributors, we can rig up a workflow that will rebuild our Godot project and submit it to itch.io _every time_ a change is made. see?? it's cool, right???
+
+## Github Action Template
+
+this is another section that you could easily do your own research and find better resources on, so i'm just going to make this as painless as possible by giving you a nice template to start off with. don't be intimidated! it's not that bad!
+
+<script src="https://gist.github.com/iznaut/a7bea257911284f8f4b2a740c36d42cf.js"></script>
+
+go ahead and download (by right clicking "view raw" and "Save link as...") this file - it should be named `build-and-publish.yml`. create two new folders in your project: `.github` at the root and `workflows` within that.
+
+{% image "./godotsetup-githubdir.png", "you should end up with something like this in VS Code, maybe with different colors if you haven't spent 20 hours finding the perfect theme yet" %}
+
+before we push it up to GitHub, we just need to make a few tweaks:
+
+- replace `[YOUR USERNAME HERE]` with your itch.io username (e.g. `iznaut`)
+- replace `[YOUR GAME ID HERE]` with your itch.io project ID (e.g. `gexfeld`)
+
+you can grab these easily out of the url for your game, even if it's not live yet (e.g. [https://iznaut.itch.io/gexfeld](https://iznaut.itch.io/gexfeld))
 

@@ -22,7 +22,15 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
-{{ content | safe }}
+<br />
+<br />
+<br />
+<aside>
+	{{ content | toc | safe }}
+</aside>
+<article>
+	{{ content | safe }}
+</article>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
